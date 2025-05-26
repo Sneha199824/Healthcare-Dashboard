@@ -1,5 +1,5 @@
 import React from 'react';
-import healthData from '../../data/healthData';  
+import healthData from '../../Data/healthData.js';  
 function HealthStatus() {
   return (
     <div className="health-status">

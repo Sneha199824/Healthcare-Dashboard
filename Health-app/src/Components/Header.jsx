@@ -8,10 +8,11 @@ function Header() {
       <div className="search-box">
         <FontAwesomeIcon icon={faSearch} className="icon" />
         <input type="text" placeholder="Search" />
+        <FontAwesomeIcon icon={faBell} className="icon bell" />
       </div>
       <div className="header-right">
-        <FontAwesomeIcon icon={faBell} className="icon bell" />
-        <img src="/avatar.png" alt="User" className="avatar" />
+     
+        <img src="../assets/images/avtar.png" alt="User" className="avatar" />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import HealthStatus from './dashboard/HealthStatus';
 import Calendar from './dashboard/Calendar';
 import UpcomingAppointments from './dashboard/UpcomingAppointments';
 import Activity from './dashboard/Activity';
-import './Header';
+import Header from './Header.jsx';
 
 function Dashboard() {
   return (

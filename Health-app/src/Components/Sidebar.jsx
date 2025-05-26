@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTachometerAlt, faHistory, faCalendar, faStethoscope, faChartBar, faComments, faLifeRing, faCog } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTachometerAlt, faHistory, faCalendar, faStethoscope,
+  faChartBar, faComments, faLifeRing, faCog,
+  faBars, faTimes
+} from '@fortawesome/free-solid-svg-icons';
 
 const links = [
   { name: 'Dashboard', icon: faTachometerAlt },
@@ -14,17 +18,28 @@ const links = [
 ];
 
 function Sidebar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="sidebar">
-      <h2 className="logo">Health<span>care.</span></h2>
-      <ul>
-        {links.map(link => (
-          <li key={link.name}>
-            <FontAwesomeIcon icon={link.icon} /> <span>{link.name}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+  
+      <div className="menu-toggle" onClick={() => setIsOpen(true)}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <h2 className="logo">Health<span>care.</span></h2>
+          <FontAwesomeIcon icon={faTimes} className="close-icon" onClick={() => setIsOpen(false)} />
+        </div>
+        <ul>
+          {links.map(link => (
+            <li key={link.name}>
+              <FontAwesomeIcon icon={link.icon} /> <span>{link.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
